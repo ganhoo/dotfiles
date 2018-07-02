@@ -1,3 +1,4 @@
+set nocompatible   "取消兼容
 syntax on "自动语法高亮
 set nu              " 显示行号
 set showcmd         " 输入的命令显示出来，看的清楚些 
@@ -69,3 +70,7 @@ filetype plugin indent on
 "打开文件类型检测, 加了这句才可以用智能补全  
 set completeopt=longest,menu
 set cursorline
+set textwidth=100
+" Transparent setting
+hi VertSplit ctermbg=NONE guibg=NONE
+hi Normal    ctermbg=NONE guibg=NONE
