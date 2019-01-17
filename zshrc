@@ -1,3 +1,6 @@
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export PATH="/usr/local/opt/maven@3.5/bin:$PATH"
 
 export FZF_DEFAULT_OPTS="
 --border
@@ -15,6 +18,22 @@ export FZF_DEFAULT_OPTS="
 --bind \"ctrl-y:execute-silent(ruby -e 'puts ARGV' {+} | pbcopy)+abort\"
 --preview-window right:50%:hidden
 "
+
+#  History {{{
+export HISTFILE="$HOME/.zsh_history" # History file
+export HISTSIZE=100000               # History size in memory
+export SAVEHIST=1000000              # The number of histsize
+export LISTMAX=50                    # The size of asking history
+setopt EXTENDED_HISTORY              # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY            # Write to the history file immediately, not when the shell exits.
+# setopt SHARE_HISTORY               # Share history between all sessions.
+setopt HIST_IGNORE_SPACE             # Do not record an entry starting with a space.
+setopt HIST_REDUCE_BLANKS            # Remove superfluous blanks before recording entry.
+setopt HIST_VERIFY                   # Do not execute immediately upon history expansion.
+setopt HIST_BEEP                     # Beep when accessing nonexistent history.
+# Do not add in root
+[[ "$UID" == 0 ]] && unset HISTFILE && SAVEHIST=0
+#  }}} History
 
 ZPLUG_INIT=~/.zplug/init.zsh
 [[ -f "$ZPLUG_INIT" ]] || curl -sL https://raw.githubusercontent.com/zplug/installer/master/installer.zsh |zsh
@@ -60,10 +79,6 @@ zplug load
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.zsh_fzf_extra 2>/dev/null
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export PATH="/usr/local/opt/maven@3.5/bin:$PATH"
 
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
