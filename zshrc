@@ -59,6 +59,7 @@ fi
 zplug load
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.zsh_fzf_extra 2>/dev/null
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -69,3 +70,5 @@ alias zshrc='vim ~/.zshrc'
 alias tmuxconf='vim ~/.tmux.conf'
 alias dot='cd ~/dotfiles'
 alias ls='exa'
+alias ll='ls -l'
+alias l='ls -la'

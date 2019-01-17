@@ -1,4 +1,4 @@
-" vim: ft=vim:
+"vim: ft=vim:
 set nu              " 显示行号
 set showcmd         " 输入的命令显示出来，看的清楚些
 
@@ -135,6 +135,8 @@ nmap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
             " \ nmap <buffer> <leader>F :YcmCompleter FixIt<CR>
 " }}} YouCompleteMe "
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'tmux-plugins/vim-tmux', { 'for': 'tmux' }
 Plug 'junegunn/vim-github-dashboard' | let g:github_dashboard = { 'username': 'ganhoo' }
 Plug 'junegunn/goyo.vim'             | nnoremap <Leader>G :Goyo<CR>
