@@ -15,3 +15,4 @@ git config --global user.name "Liu Tong"
 # avoid enter password again and again
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
+git config --global push.default simple
