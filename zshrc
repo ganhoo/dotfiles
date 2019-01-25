@@ -1,6 +1,7 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export PATH="/usr/local/opt/maven@3.5/bin:$PATH"
+export BAT_THEME="Monokai Extended Bright"
 
 export FZF_DEFAULT_OPTS="
 --border
@@ -87,3 +88,4 @@ alias dot='cd ~/dotfiles'
 hash exa &>/dev/null && alias ls='exa'
 alias ll='ls -l'
 alias l='ls -la'
+alias cat='bat'

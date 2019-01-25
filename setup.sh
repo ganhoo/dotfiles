@@ -7,7 +7,7 @@ SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd) && cd "$SCRIPT_DIR" || 
 ln -sf  "$SCRIPT_DIR/vimrc"              ~/.vimrc
 ln -sf  "$SCRIPT_DIR/tmux.conf"              ~/.tmux.conf
 ln -sf  "$SCRIPT_DIR/zshrc"             ~/.zshrc
-ln -sf  "$SCRIPT_DIR/zsh_fzf_extra"             ~/.zsh_fzf_extra
+ln -sf  "$SCRIPT_DIR/vimrc"             ~/.ideavimrc 
 
 # git config
 git config --global user.email "437341974@qq.com"
