@@ -11,21 +11,22 @@ set fileencoding=utf-8
 let mapleader = ','
 
 "新建.sh,.py文件，自动插入文件头
-autocmd BufNewFile *.sh,*.py,*.java exec ":call SetTitle()"
+" autocmd BufNewFile *.sh,*.py,*.java exec ":call SetTitle()"
 ""定义函数SetTitle，自动插入文件头
 func SetTitle()
 	"如果文件类型为.sh文件
-
-	if &filetype == 'sh'
-		call setline(1,"#!/bin/bash")
-		call append(line("."),"  ")
-		call append(line(".")+1, "\# mail: liutong@zmeng123.com")
-		call append(line(".")+2,"  ")
-		call append(line(".")+3, "\# Created Time: ".strftime("%c"))
-		call append(line(".")+4,"  ")
-	endif
+	" if &filetype == 'sh'
+		call setline(1,"#!/usr/bin/env bash")
+	call append(line("."),"#===============================================================================")
+		call append(line(".")+1, "\#   Author: Liutong")
+		call append(line(".")+2, "\#   Email: liutong@zmeng123.com")
+		call append(line(".")+3, "\#  Created Time: ".strftime("%Y-%m-%d %H:%M"))
+	call append(line(".")+4,"#===============================================================================")
+	" endif
 
 endfunc
+"新建.sh,.py文件，自动插入文件头
+autocmd BufNewFile *.sh call SetTitle()
 function HeaderPython(  )
 	call setline(1,"# !/usr/bin/env python2")
 	call append(line("."),"#-*- coding: utf-8 -*-")
