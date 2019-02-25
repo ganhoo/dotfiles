@@ -3,8 +3,7 @@ export LANG=en_US.UTF-8
 export PATH="/usr/local/opt/maven@3.5/bin:$PATH"
 export BAT_THEME="Monokai Extended Bright"
 
-export FZF_DEFAULT_OPTS="
---border
+export FZF_DEFAULT_OPTS=" --border
 --height 80%
 --extended
 --ansi
@@ -89,3 +88,23 @@ hash exa &>/dev/null && alias ls='exa' || alias ls='ls --color'
 alias ll='ls -lh'
 alias l='ls -lah'
 alias cat='bat'
+
+#自动补全选项
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' menu select
+zstyle ':completion:*:*:default' force-list always
+zstyle ':completion:*' select-prompt '%SSelect:  lines: %L  matches: %M  [%p]'
+
+zstyle ':completion:*:match:*' original only
+zstyle ':completion::prefix-1:*' completer _complete
+zstyle ':completion:predict:*' completer _complete
+zstyle ':completion:incremental:*' completer _complete _correct
+zstyle ':completion:*' completer _complete _prefix _correct _prefix _match _approximate
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+
+#补全色彩配置
+eval $(dircolors -b)
+export ZLSCOLORS="${LS_COLORS}"
+zmodload zsh/complist
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
